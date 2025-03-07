@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffcccb;
+            background-color: #ffccb;
         }
         .container {
             max-width: 600px;
@@ -27,44 +27,38 @@
         }
     </style>
 </head>
-<body>
+<body>  <!-- Yeh ek hi baar hona chahiye -->
+
     <div class="container">
-        <h1>🎉 Happy Birthday! 🎂</h1>
-        <p>Here is a special message for you:</p>
-        <p><strong>"Wishing you a day filled with love and joy!"</strong></p>
-        
-        <h3>Enter the 4-digit code to unlock more messages:</h3>
-        <input type="text" id="codeInput" placeholder="Enter Code">
-        <button onclick="checkCode()">Unlock</button>
-        
-        <div id="messages"></div>
+        <h1>Happy Birthday!</h1>
+        <p>Enter your secret code to unlock a special message:</p>
+        <input type="text" id="codeInput" placeholder="Enter code here">
+        <button onclick="checkCode()">Submit</button>
+
+        <div class="message" id="message1">🎉 Message 1: Have a wonderful birthday! 🎉</div>
+        <div class="message" id="message2">🎊 Message 2: Wishing you all the best! 🎊</div>
+        <div class="message" id="message3">💖 Message 3: May all your dreams come true! 💖</div>
     </div>
 
     <script>
-        // Codes and messages
-        const messages = {
-            "1234": "Wishing you a year full of success and happiness!",
-            "5678": "You are an amazing person. Stay blessed!",
-            "2468": "Happy Birthday! Hope you have a great day!",
-            "1357": "Many many happy returns of the day!",
-            "4321": "Enjoy your special day to the fullest!",
-            // Add more codes and messages as needed
-        };
-
         function checkCode() {
-            let code = document.getElementById("codeInput").value;
-            let messageContainer = document.getElementById("messages");
+            var code = document.getElementById("codeInput").value;
+            var messages = {
+                "HBD2025": "message1",
+                "LUCKYDAY": "message2",
+                "BESTWISHES": "message3"
+            };
 
             if (messages[code]) {
-                let msgDiv = document.createElement("div");
-                msgDiv.classList.add("message");
-                msgDiv.innerHTML = `<strong>Unlocked:</strong> ${messages[code]}`;
-                messageContainer.appendChild(msgDiv);
-                msgDiv.style.display = "block";
+                document.getElementById(messages[code]).style.display = "block";
             } else {
-                alert("Wrong code! Try again.");
+                alert("Invalid code! Try again.");
             }
         }
     </script>
+
+</body>
+    <h1>Happy Birthday!</h1>
+    <p>Have a great day!</p>
 </body>
 </html>
