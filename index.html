@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffcccb;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            display: none;
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Here is a special message for you:</p>
+        <p><strong>"Wishing you a day filled with love and joy!"</strong></p>
+        
+        <h3>Enter the 4-digit code to unlock more messages:</h3>
+        <input type="text" id="codeInput" placeholder="Enter Code">
+        <button onclick="checkCode()">Unlock</button>
+        
+        <div id="messages"></div>
+    </div>
+
+    <script>
+        // Codes and messages
+        const messages = {
+            "1234": "Wishing you a year full of success and happiness!",
+            "5678": "You are an amazing person. Stay blessed!",
+            "2468": "Happy Birthday! Hope you have a great day!",
+            "1357": "Many many happy returns of the day!",
+            "4321": "Enjoy your special day to the fullest!",
+            // Add more codes and messages as needed
+        };
+
+        function checkCode() {
+            let code = document.getElementById("codeInput").value;
+            let messageContainer = document.getElementById("messages");
+
+            if (messages[code]) {
+                let msgDiv = document.createElement("div");
+                msgDiv.classList.add("message");
+                msgDiv.innerHTML = `<strong>Unlocked:</strong> ${messages[code]}`;
+                messageContainer.appendChild(msgDiv);
+                msgDiv.style.display = "block";
+            } else {
+                alert("Wrong code! Try again.");
+            }
+        }
+    </script>
+</body>
+</html>
